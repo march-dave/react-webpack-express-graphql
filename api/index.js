@@ -5,7 +5,6 @@ let router = express.Router();
 
 router.use('/clients', Client);
 
-
 // router.get('/', (req, res) => {
 //     res.send({ data: [] });  
 //     return;
