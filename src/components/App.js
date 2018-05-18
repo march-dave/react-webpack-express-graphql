@@ -13,7 +13,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>React JS Start Note</div>
+            <div>React JS Start Note!!</div>
         );
     }
 }
