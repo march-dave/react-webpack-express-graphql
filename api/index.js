@@ -1,10 +1,14 @@
 import express from 'express';
+import Client from './clients';
 
-const router = express.Router();
+let router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send({ data: [] });
-    return;
-});
+router.use('/clients', Client);
+
+
+// router.get('/', (req, res) => {
+//     res.send({ data: [] });  
+//     return;
+// });
 
 export default router;
