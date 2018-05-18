@@ -22,6 +22,25 @@ server.get('/', (req, res) => {
     res.render('index');
 });
 
+
+import express_graphql from 'express-graphql';
+import { buildSchema } from 'graphql';
+// GraphQL schema
+let schema = buildSchema(`
+    type Query {
+        message: String
+    }
+`);
+
+let root = {
+    message: () => 'Hello World!'
+};
+server.use('/graphql', express_graphql({
+    schema: schema,
+    rootValue: root,
+    graphiql: true
+}));
+
 server.use('/api', apiRouter);
 server.use(express.static('public'));
 server.listen(port, () => {
